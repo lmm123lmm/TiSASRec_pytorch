@@ -56,7 +56,7 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, relation_m
     def sample(user):
 
         seq = np.zeros([maxlen], dtype=np.int32)#物品时间序列
-        time_seq = np.zeros([maxlen], dtype=np.int32)#对应时间戳序列
+        time_seq = np.zeros([maxlen], dtype=np.int64)#对应时间戳序列
         pos = np.zeros([maxlen], dtype=np.int32)#正样本（即下一个物品）
         neg = np.zeros([maxlen], dtype=np.int32)#负样本（随机未交互样本）
         nxt = user_train[user][-1][0]#下一个用户交互的物品的itemid
