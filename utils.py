@@ -248,7 +248,7 @@ def data_partition(fname):#fname就是文件存储位置
 
 
 def evaluate(model, dataset, args):
-    [train, valid, test, usernum, itemnum, timenum] = copy.deepcopy(dataset)#把传入的dataset给深度拷贝一下
+    [train, valid, test, usernum, itemnum, timenum] = dataset#把传入的dataset给深度拷贝一下
     #dataset就是一个列表，里面有这些东西[user_train, user_valid, user_test, usernum, itemnum, timenum]
 
     NDCG = 0.0
@@ -321,7 +321,7 @@ def evaluate(model, dataset, args):
 
 
 def evaluate_valid(model, dataset, args):
-    [train, valid, test, usernum, itemnum, timenum] = copy.deepcopy(dataset)
+    [train, valid, test, usernum, itemnum, timenum] = dataset
 
     NDCG = 0.0
     valid_user = 0.0
